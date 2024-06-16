@@ -23,7 +23,7 @@ pipeline {
         stage("SonarQube SAST Analysis"){
             steps{
                 withSonarQubeEnv('SonarScanner') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=app-loadgenerator-service \
+                    sh ''' $SCANNER_HOME/bin/sonarscanner -Dsonar.projectName=app-loadgenerator-service \
                     -Dsonar.projectKey=app-loadgenerator-service '''
                 }
             }
