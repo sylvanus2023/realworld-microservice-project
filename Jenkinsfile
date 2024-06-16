@@ -22,8 +22,8 @@ pipeline {
         // SonarQube SAST Code Analysis
         stage("SonarQube SAST Analysis"){
             steps{
-                withSonarQubeEnv('Sonar-Scanner') {
-                    sh ''' $SCANNER_HOME/bin/sonarscanner -Dsonar.projectName=app-email-service \
+                withSonarQubeEnv('Sonar-Server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=app-email-service \
                     -Dsonar.projectKey=app-email-service '''
                 }
             }
