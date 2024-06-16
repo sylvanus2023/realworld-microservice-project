@@ -23,7 +23,7 @@ pipeline {
         stage("SonarQube SAST Analysis"){
             steps{
                 withSonarQubeEnv('Sonar-Server') {
-                    sh ''' $SCANNER_HOME/bin/Sonar-Scanner -Dsonar.projectName=app-currency-service \
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=app-currency-service \
                     -Dsonar.projectKey=app-currency-service '''
                 }
             }
