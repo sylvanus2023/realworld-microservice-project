@@ -6,7 +6,7 @@ def COLOR_MAP = [
 pipeline {
     agent any
     environment {
-        SCANNER_HOME=tool 'SonarScanner'
+        SCANNER_HOME=tool 'Sonar-Scanner'
         SNYK_HOME   = tool name: 'Snyk'
     }
     tools {
@@ -16,13 +16,13 @@ pipeline {
         // Checkout To The Service Branch
         stage('Checkout To Mcroservice Branch'){
             steps{
-                git branch: 'app-cart-service', url: 'https://github.com/awanmbandi/realworld-microservice-project.git'
+                git branch: 'app-cart-service', url: 'https://github.com/sylvanus2023/realworld-microservice-project.git'
             }
         }
         // SonarQube SAST Code Analysis
         stage("SonarQube SAST Analysis"){
             steps{
-                withSonarQubeEnv('SonarServer') {
+                withSonarQubeEnv('Sonar-Server') {
                     sh ''' $SCANNER_HOME/bin/sonarscanner -Dsonar.projectName=app-cart-service \
                     -Dsonar.projectKey=app-cart-service '''
                 }
