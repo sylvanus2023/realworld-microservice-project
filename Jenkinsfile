@@ -28,9 +28,9 @@ pipeline {
         // }
         // stage("SonarQube SAST Analysis"){
         //     steps{
-        //         withSonarQubeEnv('Sonar-Server') {
+        //         withSonarQubeEnv('SonarServer') {
         //             sh ''' 
-        //             $SCANNER_HOME/bin/sonar-scanner \
+        //             $SCANNER_HOME/bin/sonarscanner \
         //             -Dsonar.projectName=app-ad-serverice \
         //             -Dsonar.projectKey=app-ad-serverice '''
         //         }
