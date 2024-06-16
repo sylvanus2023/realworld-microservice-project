@@ -6,7 +6,7 @@ def COLOR_MAP = [
 pipeline {
     agent any
     environment {
-        SCANNER_HOME=tool 'Sonar-Scanner'
+        SCANNER_HOME=tool 'SonarScanner'
         SNYK_HOME   = tool name: 'Snyk'
     }
     tools {
