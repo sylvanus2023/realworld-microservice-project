@@ -22,7 +22,7 @@ pipeline {
         // SonarQube SAST Code Analysis
         stage("SonarQube SAST Analysis"){
             steps{
-                withSonarQubeEnv('Sonar-Server') {
+                withSonarQubeEnv('SonarScanner') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=app-payment-service \
                     -Dsonar.projectKey=app-payment-service '''
                 }
