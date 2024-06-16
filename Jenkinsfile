@@ -16,14 +16,14 @@ pipeline {
         // Checkout To The Service Branch
         stage('Checkout To Mcroservice Branch'){
             steps{
-                git branch: 'app-checkout-service', url: 'https://github.com/awanmbandi/realworld-microservice-project.git'
+                git branch: 'app-checkout-service', url: 'https://github.com/sylvanus2023/realworld-microservice-project.git'
             }
         }
         // SonarQube SAST Code Analysis
         stage("SonarQube SAST Analysis"){
             steps{
-                withSonarQubeEnv('SonarServer') {
-                    sh ''' $SCANNER_HOME/bin/sonarscanner -Dsonar.projectName=app-checkout-service \
+                withSonarQubeEnv('Sonar-Server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=app-checkout-service \
                     -Dsonar.projectKey=app-checkout-service '''
                 }
             }
