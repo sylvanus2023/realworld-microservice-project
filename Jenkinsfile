@@ -23,7 +23,7 @@ pipeline {
         stage("SonarQube SAST Analysis"){
             steps{
                 withSonarQubeEnv('SonarServer') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=app-shipping-service \
+                    sh ''' $SCANNER_HOME/bin/sonarscanner -Dsonar.projectName=app-shipping-service \
                     -Dsonar.projectKey=app-shipping-service '''
                 }
             }
