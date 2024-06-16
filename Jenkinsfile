@@ -16,14 +16,14 @@ pipeline {
         // Checkout To The Service Branch
         stage('Checkout To Mcroservice Branch'){
             steps{
-                git branch: 'app-currency-service', url: 'https://github.com/awanmbandi/realworld-microservice-project.git'
+                git branch: 'app-currency-service', url: 'https://github.com/sylvanus2023/realworld-microservice-project.git'
             }
         }
         // SonarQube SAST Code Analysis
         stage("SonarQube SAST Analysis"){
             steps{
-                withSonarQubeEnv('SonarScanner') {
-                    sh ''' $SCANNER_HOME/bin/SonarScanner -Dsonar.projectName=app-currency-service \
+                withSonarQubeEnv('Sonar-Scanner') {
+                    sh ''' $SCANNER_HOME/bin/Sonar-Scanner -Dsonar.projectName=app-currency-service \
                     -Dsonar.projectKey=app-currency-service '''
                 }
             }
