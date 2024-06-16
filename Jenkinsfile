@@ -84,7 +84,7 @@ pipeline {
         // stage('ZAP Dynamic Testing | DAST') {
         //     steps {
         //         sshagent(['OWASP-Zap-Credential']) {
-        //             sh 'ssh -o StrictHostKeyChecking=no ubuntu@34.71.9.167 "docker run -t zaproxy/zap-weekly zap-baseline.py -t http://34.45.175.156:30000/" || true'
+        //             sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.49.96 "docker run -t zaproxy/zap-weekly zap-baseline.py -t http://172.31.28.205:30000/" || true'
         //                                                 //JENKINS_PUBLIC_IP                                                   //EKS_WORKER_NODE_IP_ADDRESS:30000
         //         }
         //     }
@@ -111,7 +111,7 @@ pipeline {
     post {
     always {
         echo 'Slack Notifications.'
-        slackSend channel: '#ma-multi-microservices-alerts', //update and provide your channel name
+        slackSend channel: 'szm2-multi-microservices-alerts', //update and provide your channel name
         color: COLOR_MAP[currentBuild.currentResult],
         message: "*${currentBuild.currentResult}:* Job Name '${env.JOB_NAME}' build ${env.BUILD_NUMBER} \n Build Timestamp: ${env.BUILD_TIMESTAMP} \n Project Workspace: ${env.WORKSPACE} \n More info at: ${env.BUILD_URL}"
     }
