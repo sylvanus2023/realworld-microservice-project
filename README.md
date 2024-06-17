@@ -181,7 +181,7 @@ aws eks update-kubeconfig --name <clustername> --region <region>
 
 ### Jenkins setup
 1) #### Access Jenkins
-    Copy your Jenkins Public IP Address and paste on the browser = ExternalIP:8080
+    Copy your Jenkins Public IP Address and paste on the browser = PublicIP:8080
     - Login to your Jenkins instance using your Shell (GitBash or your Mac Terminal)
     - Copy the Path from the Jenkins UI to get the Administrator Password
         - Run: `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
