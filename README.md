@@ -127,7 +127,7 @@ aws --version
 docker ps | grep sonarqube:lts-community
 
 # Lastly confirm that the `sonarqube-volume docker volume` was created
-docker volume inspect volume sonarqube-volume
+docker volume inspect sonarqube-volume
 ```
 
 ### 5B) Deploy Your EKS Cluster Environment
